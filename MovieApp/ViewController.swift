@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var movieModel: MovieModel?
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var movieTableView: UITableView!
@@ -18,19 +20,70 @@ class ViewController: UIViewController {
         movieTableView.delegate = self
         movieTableView.dataSource = self
         searchBar.delegate = self
+        
+        requestMovieAPI()
     }
 
+    // network
+    func requestMovieAPI() {
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig)
+        
+        var componets = URLComponents(string: "https://itunes.apple.com/search")
+        let term = URLQueryItem(name: "term", value: "marvel")
+        let media = URLQueryItem(name: "media", value: "movie")
+        
+        componets?.queryItems = [term, media]
+        
+        guard let url = componets?.url else { return}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+       let task = session.dataTask(with: request) { data, response, error in
+           print((response as! HTTPURLResponse).statusCode)
+           
+           if let hasData = data {
+               do {
+                   self.movieModel = try JSONDecoder().decode(MovieModel.self, from: hasData)
+                   print(self.movieModel ?? "no data")
+                   
+                   DispatchQueue.main.async {
+                       self.movieTableView.reloadData()
+                   }
+                   
+                   
+               }catch{
+                   print(error)
+               }
+               
+           }
+           
+        }
+        
+        task.resume()
+        session.finishTasksAndInvalidate()
+    }
 
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return self.movieModel?.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = movieTableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        cell.titleLabel.text = movieModel?.results[indexPath.row].trackName
+        cell.descriptionLabel.text = movieModel?.results[indexPath.row].shortDescription
+        
+        let currency = self.movieModel?.results[indexPath.row].currency ?? ""
+        let price = self.movieModel?.results[indexPath.row].trackPrice.description ?? ""
+        cell.priceLabel.text = currency + price
+        
+        return cell
     }
     
     
@@ -38,6 +91,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        <#code#>
+        
     }
 }

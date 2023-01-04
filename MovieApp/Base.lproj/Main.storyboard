@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="103" width="390" height="707"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="209" id="Qfi-dd-qRP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="209" id="Qfi-dd-qRP" customClass="MovieCell" customModule="MovieApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="390" height="209"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qfi-dd-qRP" id="Gqf-V6-VPi">
@@ -34,25 +34,25 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56A-iJ-fjY">
-                                                    <rect key="frame" x="100" y="5" width="285" height="21"/>
+                                                    <rect key="frame" x="100" y="5" width="270" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpA-O2-AFP">
-                                                    <rect key="frame" x="100" y="31" width="285" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpA-O2-AFP">
+                                                    <rect key="frame" x="100" y="31" width="270" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiK-py-Obk">
-                                                    <rect key="frame" x="100" y="57" width="285" height="121"/>
+                                                    <rect key="frame" x="100" y="57.000000000000007" width="270" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrl-Jv-QIC">
-                                                    <rect key="frame" x="100" y="183" width="285" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrl-Jv-QIC">
+                                                    <rect key="frame" x="100" y="183" width="270" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -60,23 +60,30 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="iiK-py-Obk" firstAttribute="leading" secondItem="iV9-fO-w8o" secondAttribute="trailing" constant="5" id="0JT-aB-v93"/>
-                                                <constraint firstAttribute="trailing" secondItem="jpA-O2-AFP" secondAttribute="trailing" constant="5" id="3VW-Cj-E4A"/>
+                                                <constraint firstAttribute="trailing" secondItem="jpA-O2-AFP" secondAttribute="trailing" constant="20" id="3VW-Cj-E4A"/>
                                                 <constraint firstItem="iiK-py-Obk" firstAttribute="top" secondItem="jpA-O2-AFP" secondAttribute="bottom" constant="5" id="KbV-Hn-eqV"/>
                                                 <constraint firstItem="iV9-fO-w8o" firstAttribute="top" secondItem="Gqf-V6-VPi" secondAttribute="top" constant="5" id="LjH-k7-j3H"/>
-                                                <constraint firstAttribute="trailing" secondItem="Wrl-Jv-QIC" secondAttribute="trailing" constant="5" id="Mar-ao-hfa"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wrl-Jv-QIC" secondAttribute="trailing" constant="20" id="Mar-ao-hfa"/>
                                                 <constraint firstItem="56A-iJ-fjY" firstAttribute="top" secondItem="Gqf-V6-VPi" secondAttribute="top" constant="5" id="Q8r-R4-VYg"/>
                                                 <constraint firstItem="56A-iJ-fjY" firstAttribute="leading" secondItem="iV9-fO-w8o" secondAttribute="trailing" constant="5" id="SkO-iy-AcO"/>
-                                                <constraint firstAttribute="trailing" secondItem="56A-iJ-fjY" secondAttribute="trailing" constant="5" id="UXM-kD-ViG"/>
-                                                <constraint firstItem="Wrl-Jv-QIC" firstAttribute="top" secondItem="iiK-py-Obk" secondAttribute="bottom" constant="5" id="Yk0-h4-8ro"/>
+                                                <constraint firstAttribute="trailing" secondItem="56A-iJ-fjY" secondAttribute="trailing" constant="20" id="UXM-kD-ViG"/>
+                                                <constraint firstItem="Wrl-Jv-QIC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iiK-py-Obk" secondAttribute="bottom" constant="5" id="Yk0-h4-8ro"/>
                                                 <constraint firstAttribute="bottom" secondItem="iV9-fO-w8o" secondAttribute="bottom" constant="5" id="aYh-sl-hLp"/>
                                                 <constraint firstAttribute="bottom" secondItem="Wrl-Jv-QIC" secondAttribute="bottom" constant="5" id="fnN-Sb-Adu"/>
                                                 <constraint firstItem="iV9-fO-w8o" firstAttribute="leading" secondItem="Gqf-V6-VPi" secondAttribute="leading" constant="5" id="ibf-3T-2lu"/>
-                                                <constraint firstAttribute="trailing" secondItem="iiK-py-Obk" secondAttribute="trailing" constant="5" id="jGg-ar-ZZP"/>
+                                                <constraint firstAttribute="trailing" secondItem="iiK-py-Obk" secondAttribute="trailing" constant="20" id="jGg-ar-ZZP"/>
                                                 <constraint firstItem="jpA-O2-AFP" firstAttribute="top" secondItem="56A-iJ-fjY" secondAttribute="bottom" constant="5" id="ldN-6c-sC5"/>
                                                 <constraint firstItem="jpA-O2-AFP" firstAttribute="leading" secondItem="iV9-fO-w8o" secondAttribute="trailing" constant="5" id="ns1-e6-d7p"/>
                                                 <constraint firstItem="Wrl-Jv-QIC" firstAttribute="leading" secondItem="iV9-fO-w8o" secondAttribute="trailing" constant="5" id="xeO-b0-2vm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="jpA-O2-AFP" id="ICu-9w-lTy"/>
+                                            <outlet property="descriptionLabel" destination="iiK-py-Obk" id="jFH-7c-HHv"/>
+                                            <outlet property="movieImageView" destination="iV9-fO-w8o" id="nh9-b8-Wt4"/>
+                                            <outlet property="priceLabel" destination="Wrl-Jv-QIC" id="IXo-6s-PDM"/>
+                                            <outlet property="titleLabel" destination="56A-iJ-fjY" id="sZI-ub-7v9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -103,19 +110,9 @@
                     <connections>
                         <outlet property="movieTableView" destination="5Ar-mu-z9g" id="HeJ-0y-FiM"/>
                         <outlet property="searchBar" destination="k5C-vu-2CJ" id="dfB-dy-d0t"/>
-                        <outlet property="searchDisplayController" destination="pqa-Vh-Xa3" id="Atj-ku-plA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="pqa-Vh-Xa3">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="ype-zi-cQ1"/>
-                        <outlet property="searchBar" destination="k5C-vu-2CJ" id="6yw-Vh-U0F"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="f67-dg-F8j"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="KsY-1j-b4A"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Pcr-sD-i03"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="130.76923076923077" y="-28.436018957345969"/>
         </scene>

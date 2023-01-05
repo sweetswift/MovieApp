@@ -96,6 +96,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return self.movieModel?.results.count ?? 0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailVC = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+        
+        detailVC.movieResult = self.movieModel?.results[indexPath.row]
+        
+        self.present(detailVC, animated: true)
+    }
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

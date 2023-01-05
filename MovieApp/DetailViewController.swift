@@ -11,6 +11,7 @@ import AVKit
 class DetailViewController: UIViewController {
     
     var movieResult: MovieResult?
+    var player: AVPlayer?
     
     @IBOutlet weak var movieContainer: UIView!
     
@@ -44,16 +45,24 @@ class DetailViewController: UIViewController {
     
     func makePlayerAndPlay(urlString: String) {
         if let hasUrl = URL(string: urlString) {
-            let player = AVPlayer(url: hasUrl)
+            self.player = AVPlayer(url: hasUrl)
             let playerLayer = AVPlayerLayer(player: player)
             
             movieContainer.layer.addSublayer(playerLayer)
             playerLayer.frame = movieContainer.bounds
-            player.play()
+            self.player?.play()
             
         }
         
         
     }
     
+    @IBAction func play(_ sender: Any) {
+        self.player?.play()
+    }
+    
+    
+    @IBAction func stop(_ sender: Any) {
+        self.player?.pause()
+    }
 }

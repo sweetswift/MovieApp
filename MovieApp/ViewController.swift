@@ -119,7 +119,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-    
+        if let dateString =  self.movieModel?.results[indexPath.row].releaseDate {
+            let formatter = ISO8601DateFormatter()
+            if let isoDate = formatter.date(from: dateString) {
+               
+                let myFormatter = DateFormatter()
+                myFormatter.dateFormat = "yyyy-MM-dd"
+                let dateString = myFormatter.string(from: isoDate)
+                
+                cell.dateLabel.text = dateString
+            }
+            
+     
+        }
+        
+        
         
         return cell
     }

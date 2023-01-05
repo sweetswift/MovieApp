@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="DetailViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fD7-A0-bhi">
+                                <rect key="frame" x="0.0" y="67" width="390" height="200"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HV5-y5-14T"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-8o-XFl">
+                                <rect key="frame" x="20" y="287" width="350" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyO-LT-hwY">
+                                <rect key="frame" x="20" y="328" width="350" height="40.666666666666686"/>
+                                <string key="text">description
+description</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zyO-LT-hwY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="2xb-sa-u2i"/>
+                            <constraint firstItem="fD7-A0-bhi" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="BCv-v4-U0E"/>
+                            <constraint firstItem="gsf-8o-XFl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="JJG-NH-JLB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gsf-8o-XFl" secondAttribute="trailing" constant="20" id="JME-2b-Gnu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zyO-LT-hwY" secondAttribute="bottom" constant="20" id="KpT-xK-hF1"/>
+                            <constraint firstItem="fD7-A0-bhi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="R3R-4e-maF"/>
+                            <constraint firstItem="zyO-LT-hwY" firstAttribute="top" secondItem="gsf-8o-XFl" secondAttribute="bottom" constant="20" id="XNE-Do-THk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fD7-A0-bhi" secondAttribute="trailing" id="qrM-gb-p1c"/>
+                            <constraint firstItem="gsf-8o-XFl" firstAttribute="top" secondItem="fD7-A0-bhi" secondAttribute="bottom" constant="20" id="uQr-H8-Oct"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zyO-LT-hwY" secondAttribute="trailing" constant="20" id="wYd-5l-SUm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="zyO-LT-hwY" id="coz-db-IUb"/>
+                        <outlet property="movieContainer" destination="fD7-A0-bhi" id="hv0-iW-TBx"/>
+                        <outlet property="titleLabel" destination="gsf-8o-XFl" id="GhY-UX-wM7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="-28.436018957345969"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

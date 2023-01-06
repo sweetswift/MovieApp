@@ -17,6 +17,7 @@
 		104E95E22965B27C00A01740 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E95E12965B27C00A01740 /* MovieModel.swift */; };
 		104E95E42967021E00A01740 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E95E32967021E00A01740 /* DetailViewController.swift */; };
 		104E95E62967022D00A01740 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104E95E52967022D00A01740 /* DetailViewController.storyboard */; };
+		104E95E829683D5600A01740 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E95E729683D5600A01740 /* NetworkLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		104E95E12965B27C00A01740 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		104E95E32967021E00A01740 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		104E95E52967022D00A01740 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		104E95E729683D5600A01740 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				104E95E12965B27C00A01740 /* MovieModel.swift */,
 				104E95E32967021E00A01740 /* DetailViewController.swift */,
 				104E95E52967022D00A01740 /* DetailViewController.storyboard */,
+				104E95E729683D5600A01740 /* NetworkLayer.swift */,
 			);
 			path = MovieApp;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104E95E829683D5600A01740 /* NetworkLayer.swift in Sources */,
 				104E95D0296474C200A01740 /* ViewController.swift in Sources */,
 				104E95CC296474C200A01740 /* AppDelegate.swift in Sources */,
 				104E95E22965B27C00A01740 /* MovieModel.swift in Sources */,

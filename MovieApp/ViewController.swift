@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var movieTableView: UITableView!
     
     var networkLayer = NetworkLayer()
+    var term = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
     // network
     func requestMovieAPI() {
         
-        let term = URLQueryItem(name: "term", value: "marvel")
+        let term = URLQueryItem(name: "term", value: term)
         let media = URLQueryItem(name: "media", value: "movie")
         let querys = [term, media]
         
@@ -92,39 +93,39 @@ class ViewController: UIViewController {
 //    func requestMovieAPI() {
 //        let sessionConfig = URLSessionConfiguration.default
 //        let session = URLSession(configuration: sessionConfig)
-//        
+//
 //        var componets = URLComponents(string: "https://itunes.apple.com/search")
 //        let term = URLQueryItem(name: "term", value: "marvel")
 //        let media = URLQueryItem(name: "media", value: "movie")
-//        
+//
 //        componets?.queryItems = [term, media]
-//        
+//
 //        guard let url = componets?.url else { return}
-//        
+//
 //        var request = URLRequest(url: url)
 //        request.httpMethod = "GET"
-//        
+//
 //        let task = session.dataTask(with: request) { data, response, error in
 //            print((response as! HTTPURLResponse).statusCode)
-//            
+//
 //            if let hasData = data {
 //                do {
 //                    self.movieModel = try JSONDecoder().decode(MovieModel.self, from: hasData)
 //                    print(self.movieModel ?? "no data")
-//                    
+//
 //                    DispatchQueue.main.async {
 //                        self.movieTableView.reloadData()
 //                    }
-//                    
-//                    
+//
+//
 //                }catch{
 //                    print(error)
 //                }
-//                
+//
 //            }
-//            
+//
 //        }
-//        
+//
 //        task.resume()
 //        session.finishTasksAndInvalidate()
 //    }
@@ -195,6 +196,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let hasText = searchBar.text else {
+            return
+        }
         
+        term = hasText
+        requestMovieAPI()
+        self.view.endEditing(true)
     }
 }
